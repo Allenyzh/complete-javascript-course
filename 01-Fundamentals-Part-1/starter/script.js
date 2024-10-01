@@ -71,7 +71,7 @@ const compare = () =>
   );
 
 compare();
-*/
+
 
 let dolphins = [97, 112, 101];
 let koalas = [109, 95, 123];
@@ -89,3 +89,6 @@ const compare = () =>
   );
 console.log(maxD, maxK);
 compare();
+
+//5 falsy values: 0, '', undefined, null, NaN
+*/
