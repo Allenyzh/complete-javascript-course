@@ -15,29 +15,58 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
-const julia = [3, 5, 2, 12, 7];
-const kate = [4, 1, 15, 8, 3];
+// const julia0 = [3, 5, 2, 12, 7];
+// const kate0 = [4, 1, 15, 8, 3];
 
-const julia1 = [9, 16, 6, 8, 3];
-const kate1 = [10, 5, 6, 1, 4];
+// const julia1 = [9, 16, 6, 8, 3];
+// const kate1 = [10, 5, 6, 1, 4];
 
-const checkDogs = function (array) {
-  let copied = Array.from(array);
-  //   console.log(copied);
-  copied = copied.slice(1, -1);
-  //   console.log(copied);
-  copied.forEach((e, i) =>
-    console.log(
-      e < 3
-        ? `Dog number ${i + 1} is still a puppy 🐶`
-        : `Dog number ${i + 1} is an adult, and is ${e} years old`
-    )
+// // const julia
+
+// const checkDogs = function (array) {
+//   let copied = Array.from(array);
+//   //   console.log(copied);
+//   copied = copied.slice(1, -2);
+//   //   console.log(copied);
+//   copied.forEach((e, i) =>
+//     console.log(
+//       e < 3
+//         ? `Dog number ${i + 1} is still a puppy 🐶`
+//         : `Dog number ${i + 1} is an adult, and is ${e} years old`
+//     )
+//   );
+//   return copied;
+// };
+
+// console.log(`Julis's data: ${checkDogs(julia0)}`);
+// console.log(`Kate's data: ${checkDogs(kate0)}`);
+
+// console.log(`Julis's data: ${checkDogs(julia1)}`);
+// console.log(`Kate's data: ${checkDogs(kate1)}`);
+
+// const julia1 = [1, 2, 3, 4];
+
+// // const newJulia = julia1.map(e => e + 1);
+
+// // const array1 = julia1.filter(e => e > 2);
+// const inirialValue = 0;
+// const reducedJulia = julia1.reduce(function (acc, cur, i, a) {
+//  acc= acc + cur;
+//   console.log(acc);
+// });
+
+// // console.log(newJulia);
+// // console.log(array1);
+// console.log(reducedJulia);
+
+const julia1 = [5, 2,6, 3, 9, 4];
+const initialValue = 0;
+
+const reducedJulia = julia1.reduce(function (acc, cur, i, a) {
+  console.log(
+    `Step ${i + 1}: acc = ${acc}, cur = ${cur}, index = ${i}, array = [${a}]`
   );
-  return copied;
-};
-
-console.log(`Julis's data: ${checkDogs(julia)}`);
-console.log(`Kate's data: ${checkDogs(kate)}`);
-
-console.log(`Julis's data: ${checkDogs(julia1)}`);
-console.log(`Kate's data: ${checkDogs(kate1)}`);
+  return acc > cur ? acc : cur;
+  // return acc;
+}, initialValue);
+console.log(reducedJulia);
